@@ -1,0 +1,18 @@
+<div>
+<h2>Gamestatus: {{winner}}</h2>
+<table border="1">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of res; let i = index">    
+    <td>{{el}}</td>
+    <td>{{aiBits[i]}}</td>
+    <td>{{gameResults[i]}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+

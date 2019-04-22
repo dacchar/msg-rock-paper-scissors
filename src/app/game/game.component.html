@@ -1,0 +1,24 @@
+<h1>{{user}} vs AI!</h1>
+<div *ngIf="gameActiv"><div>
+    <button (click)="addRock()">Rock</button> 
+    <button (click)="addPaper()">Paper</button>
+    <button (click)="addScissors()">Scissors</button>
+</div>
+<table border="1">
+  <thead>
+    <tr>
+      <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let el of game; let i = index">    
+    <td>{{el}}</td>
+    <td>{{aiBits[i]}}</td>
+    <td>{{results[i]}}</td>
+    </tr>
+  </tbody>
+</table></div>
+<div *ngIf="!gameActiv"><app-game-result></app-game-result></div>
+<button (click) = "restart()">  Play again!</button>
+<button (click) = "restart()" [routerLink]="['/WelcomeMenuComponent']"> Exit </button>
+
